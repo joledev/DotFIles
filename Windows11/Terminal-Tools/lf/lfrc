@@ -1,0 +1,98 @@
+# lf configuration file
+# Place this file at: %APPDATA%\lf\lfrc
+
+# Basic settings
+set shell powershell
+set shellopts '-NoProfile -Command'
+set icons
+set hidden
+set drawbox
+set info size
+set dircounts
+set ratios 1:2:3
+set timefmt '02/01/2006 15:04:05'
+set preview true
+set previewer type
+
+# Custom commands
+cmd open ${{
+    switch ($f) {
+        {$_ -match '\.(txt|md|json|xml|yml|yaml|toml|ini|cfg|conf)$'} {
+            nvim $f
+        }
+        {$_ -match '\.(jpg|jpeg|png|gif|bmp|svg)$'} {
+            Start-Process $f
+        }
+        {$_ -match '\.(mp4|avi|mkv|mov|wmv)$'} {
+            Start-Process $f
+        }
+        {$_ -match '\.(mp3|wav|flac|ogg)$'} {
+            Start-Process $f
+        }
+        default {
+            Start-Process $f
+        }
+    }
+}}
+
+cmd mkdir ${{
+    $name = Read-Host "Directory name"
+    if ($name) {
+        New-Item -ItemType Directory -Name $name
+    }
+}}
+
+cmd touch ${{
+    $name = Read-Host "File name"
+    if ($name) {
+        New-Item -ItemType File -Name $name
+    }
+}}
+
+cmd delete ${{
+    $choice = Read-Host "Delete selected files? (y/N)"
+    if ($choice -eq 'y' -or $choice -eq 'Y') {
+        Remove-Item -Path $fx -Recurse -Force
+    }
+}}
+
+cmd extract ${{
+    switch ($f) {
+        {$_ -match '\.zip$'} {
+            Expand-Archive -Path $f -DestinationPath (Split-Path $f -Parent)
+        }
+        {$_ -match '\.7z$'} {
+            7z x $f
+        }
+        {$_ -match '\.rar$'} {
+            unrar x $f
+        }
+    }
+}}
+
+# Key bindings
+map <enter> open
+map <delete> delete
+map a mkdir
+map t touch
+map x extract
+map r reload
+map <c-r> reload
+map <c-h> set hidden!
+map <c-w> $nvim $f
+
+# Navigation
+map g/ cd /
+map gh cd ~
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
+map gm cd ~/Music
+map gv cd ~/Videos
+map gs cd ~/scoop/apps
+map gc cd ~/AppData/Local
+
+# Preview settings
+map w :set preview!
+map W :set ratios 1:2
+map <c-p> :set preview!

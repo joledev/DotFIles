@@ -1,0 +1,322 @@
+# ========================================
+# 🚀 ALACRITTY CONFIGURACIÓN PROFESIONAL
+# ========================================
+# Optimizado para desarrollo y productividad
+# Tema: Dark Professional con transparencia elegante
+
+[window]
+# Transparencia optimizada para profesionalismo
+opacity = 0.88
+# Padding mejorado para mejor legibilidad
+padding = { x = 20, y = 20 }
+# Decoraciones completas pero elegantes
+decorations = "full"
+# Título dinámico y descriptivo
+title = "Alacritty Terminal"
+# Iniciar maximizado para aprovechamiento completo
+startup_mode = "Maximized"
+# Clase de ventana para gestores de ventanas
+class = { instance = "Alacritty", general = "Alacritty" }
+# Dimensiones optimizadas
+dimensions = { columns = 120, lines = 40 }
+# Posición centrada
+position = { x = 100, y = 100 }
+# Redimensionamiento dinámico
+dynamic_padding = true
+# Título decorado con información útil
+dynamic_title = true
+# Efectos de blur (requiere compositor compatible)
+blur = true
+
+[font]
+# ========================================
+# 🔤 CONFIGURACIÓN DE FUENTE PROFESIONAL
+# ========================================
+# FiraCode Nerd Font Mono - Fuente con ligaduras y iconos completos
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+bold = { family = "FiraCode Nerd Font Mono", style = "Bold" }
+italic = { family = "FiraCode Nerd Font Mono", style = "Light" }
+bold_italic = { family = "FiraCode Nerd Font Mono", style = "SemiBold" }
+
+# Tamaño optimizado para productividad (11pt = balance perfecto)
+size = 11.0
+
+# Espaciado fino para mejor legibilidad
+offset = { x = 0, y = 2 }
+
+# Configuraciones avanzadas de renderizado
+builtin_box_drawing = true
+
+# Configuraciones avanzadas de renderizado optimizadas
+
+[colors]
+# ========================================
+# 🎨 ESQUEMA DE COLORES PROFESIONAL
+# ========================================
+# Tema dark optimizado para largas sesiones de trabajo
+
+[colors.primary]
+# Fondo principal con toque cálido
+background = "#1a1b23"
+# Primer plano con contraste óptimo
+foreground = "#e6e6e6"
+# Texto brillante para resaltados
+bright_foreground = "#ffffff"
+# Fondo tenue para elementos secundarios
+dim_foreground = "#9ca0a4"
+
+# ========================================
+# 🟡 PALETA DE COLORES NORMALES
+# ========================================
+[colors.normal]
+black = "#2c2d3a"
+red = "#f85757"        # Rojo vibrante pero no agresivo
+green = "#5af78e"      # Verde menta profesional
+yellow = "#f9f871"     # Amarillo dorado suave
+blue = "#57c7ff"       # Azul cyan brillante
+magenta = "#d078ff"    # Magenta suave
+cyan = "#4fb3d9"       # Cyan profesional
+white = "#f0f0f0"      # Blanco nieve
+
+# ========================================
+# ✨ PALETA DE COLORES BRILLANTES
+# ========================================
+[colors.bright]
+black = "#686868"      # Gris medio
+red = "#ff6b85"        # Rojo coral
+green = "#69ff94"      # Verde lima
+yellow = "#fffc67"     # Amarillo neón
+blue = "#6ec5ff"       # Azul cielo
+magenta = "#d881ff"    # Magenta brillante
+cyan = "#60d8ff"       # Cyan brillante
+white = "#ffffff"      # Blanco puro
+
+# ========================================
+# 📝 ELEMENTOS DE INTERFAZ
+# ========================================
+
+# Selección de texto mejorada
+[colors.selection]
+background = "#4a4a5e"
+text = "#ffffff"
+
+# Cursor con mejor visibilidad
+[colors.cursor]
+text = "#1a1b23"
+cursor = "#f9f871"      # Amarillo para alta visibilidad
+
+# Indicadores de búsqueda
+[colors.search.matches]
+foreground = "#1a1b23"
+background = "#f9f871"     # Amarillo para matches
+
+[colors.search.focused_match]
+foreground = "#ffffff"
+background = "#f85757"     # Rojo para match activo
+
+# Sugerencias y hints
+[colors.hints.start]
+foreground = "#1a1b23"
+background = "#f9f871"
+
+[colors.hints.end]
+foreground = "#1a1b23"
+background = "#69ff94"
+
+# Línea de números (vi mode)
+[colors.line_indicator]
+foreground = "#9ca0a4"
+background = "#2c2d3a"
+
+# Footer de la barra de búsqueda
+[colors.footer_bar]
+foreground = "#e6e6e6"
+background = "#2c2d3a"
+
+# ========================================
+# 💻 CONFIGURACIÓN DE TERMINAL
+# ========================================
+[terminal.shell]
+program = "pwsh"
+args = ["-NoLogo", "-WorkingDirectory", "C:\\Users\\{USERNAME}"]
+
+[terminal]
+# Soporte para OSC 52 (clipboard remoto)
+osc52 = "CopyPaste"
+
+# ========================================
+# 📜 CONFIGURACIÓN DE SCROLLING
+# ========================================
+[scrolling]
+# Historial extenso para desarrollo
+history = 50000
+# Velocidad de scroll óptima
+multiplier = 4
+
+# ========================================
+# 🔘 CONFIGURACIÓN DE CURSOR
+# ========================================
+[cursor]
+# Cursor prominente con parpadeo suave
+style = { shape = "Block", blinking = "On" }
+# Cursor en modo vi
+vi_mode_style = { shape = "Beam", blinking = "Off" }
+# Intervalo de parpadeo optimizado
+blink_interval = 500
+# Sin timeout (parpadeo continuo)
+blink_timeout = 0
+# Cursor sin línea cuando no enfocado
+unfocused_hollow = true
+
+# ========================================
+# 🕰 CONFIGURACIÓN DE MOUSE
+# ========================================
+[mouse]
+# Ocultar cursor durante escritura
+hide_when_typing = true
+
+# ========================================
+# 🔍 HINTS Y SELECCIÓN
+# ========================================
+[hints]
+# Configuración de hints para URLs
+[[hints.enabled]]
+regex = '''(https?://|www\.)[^\s<>"{}|\\^`\[\]]+'''
+command = "cmd"
+post_processing = true
+mouse = { enabled = true, mods = "Control" }
+binding = { key = "U", mods = "Control|Shift" }
+
+# ========================================
+# 🔍 SELECCIÓN AVANZADA
+# ========================================
+[selection]
+# Guardado automático al clipboard
+save_to_clipboard = true
+# Caracteres semánticos para selección de palabras
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+# ========================================
+# ⌨️ ATAJOS DE TECLADO AVANZADOS
+# ========================================
+
+# --- CLIPBOARD ---
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "Insert"
+mods = "Shift"
+action = "PasteSelection"
+
+# --- ZOOM ---
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+# --- VENTANA ---
+[[keyboard.bindings]]
+key = "F11"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Q"
+mods = "Control|Shift"
+action = "Quit"
+
+# --- NAVEGACIÓN ---
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+action = "ScrollToBottom"
+
+# --- BÚSQUEDA ---
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+# --- VI MODE ---
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control|Shift"
+action = "ToggleViMode"
+
+# ========================================
+# 🔘 MOUSE BINDINGS AVANZADOS
+# ========================================
+
+# Pegar con clic derecho
+[[mouse.bindings]]
+mouse = "Right"
+action = "PasteSelection"
+
+# Mouse bindings adicionales para mejor experiencia
+# (Configuraciones específicas de scroll se manejan automáticamente)
+
+# ========================================
+# 🚀 CONFIGURACIONES DE RENDIMIENTO
+# ========================================
+[env]
+# Variables de entorno para mejor rendimiento
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+# Variables para optimizar blur y transparencia
+WINIT_HIDPI_FACTOR = "1.0"
+WINIT_UNIX_BACKEND = "x11"
+# Habilitar blur a nivel de sistema
+KDE_SESSION_VERSION = "5"
+GNOME_DESKTOP_SESSION_ID = "this-is-deprecated"
+
+# Configuración final optimizada
+[debug]
+# Log level para troubleshooting (cambiar a 'Off' en producción)
+log_level = "Warn"
+# No renderizar cuando no es necesario
+render_timer = false
+# Imprimir todos los eventos recibidos
+print_events = false
+

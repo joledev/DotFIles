@@ -1,0 +1,80 @@
+# Archivos de configuración con información sensible
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+*.cer
+*.der
+
+# Archivos de credenciales
+credentials.json
+secrets.json
+config.json
+auth.json
+tokens.json
+.env
+.env.local
+.env.production
+
+# Configuraciones específicas del usuario que pueden contener paths personales
+**/user-specific/
+**/personal/
+**/private/
+
+# Archivos de historial que pueden contener comandos con credenciales
+.bash_history
+.zsh_history
+.powershell_history
+ConsoleHost_history.txt
+
+# Archivos de configuración de SSH
+.ssh/
+id_rsa*
+id_ed25519*
+known_hosts
+
+# Configuraciones de Git que pueden contener información personal
+.gitconfig
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Configuraciones de aplicaciones que pueden contener tokens
+**/spotify-tui/config.yml
+**/gh/config.yml
+**/github-cli/config.yml
+
+# Archivos de backup que pueden contener información sensible
+*.bak
+*.backup
+*_backup
+
+# Configuraciones de base de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos específicos de Windows que pueden contener rutas personales
+desktop.ini
+Thumbs.db
+
+# Configuraciones de editores que pueden contener rutas específicas del usuario
+.vscode/settings.json
+.idea/
+
+# Archivos de configuración que contienen rutas absolutas específicas del usuario
+# (estos deberían ser templates en su lugar)
+**/*_user_specific*
+**/*_local*
+**/user-specific/
+
+# Archivos que contienen rutas o configuraciones específicas del usuario
+**/Windows11/**/user-specific/**
+**/PowerShell/Microsoft.PowerShell_profile.ps1
+**/Alacritty/alacritty.toml
+**/Neovim/user-config/**

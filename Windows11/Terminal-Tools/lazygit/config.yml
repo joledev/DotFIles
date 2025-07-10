@@ -1,0 +1,151 @@
+gui:
+  # Configuración de la interfaz
+  scrollHeight: 2
+  scrollPastBottom: true
+  sidePanelWidth: 0.3333
+  expandFocusedSidePanel: false
+  mainPanelSplitMode: 'flexible'
+  language: 'auto'
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - white
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - blue
+    selectedRangeBgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
+  commitLength:
+    show: true
+  mouseEvents: true
+  skipDiscardChangeWarning: false
+  skipStashWarning: false
+  showFileTree: true
+  showRandomTip: true
+  showCommandLog: true
+  nerdFontsVersion: "3"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+  commit:
+    signOff: false
+  merging:
+    manualCommit: false
+    args: ''
+  log:
+    order: 'topo-order'
+    showGraph: 'when-maximised'
+  skipHookPrefix: WIP
+  autoFetch: true
+  autoRefresh: true
+  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
+  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
+  overrideGpg: false
+  disableForcePushing: false
+  parseEmoji: false
+
+refresher:
+  refreshInterval: 10
+  fetchInterval: 60
+
+update:
+  method: prompt
+  days: 14
+
+confirmOnQuit: false
+quitOnTopLevelReturn: false
+
+keybinding:
+  universal:
+    quit: 'q'
+    quit-alt1: '<c-c>'
+    return: '<esc>'
+    quitWithoutChangingDirectory: 'Q'
+    togglePanel: '<tab>'
+    prevItem: '<up>'
+    nextItem: '<down>'
+    prevItem-alt: 'k'
+    nextItem-alt: 'j'
+    prevPage: ','
+    nextPage: '.'
+    gotoTop: '<'
+    gotoBottom: '>'
+    scrollLeft: 'H'
+    scrollRight: 'L'
+    prevBlock: '<left>'
+    nextBlock: '<right>'
+    prevBlock-alt: 'h'
+    nextBlock-alt: 'l'
+    jumpToBlock: ['1', '2', '3', '4', '5']
+    nextMatch: 'n'
+    prevMatch: 'N'
+    optionMenu: 'x'
+    optionMenu-alt1: '?'
+    select: '<space>'
+    goInto: '<enter>'
+    openRecentRepos: '<c-r>'
+    confirm: '<enter>'
+    confirm-alt1: 'y'
+    remove: 'd'
+    new: 'n'
+    edit: 'e'
+    openFile: 'o'
+    scrollUpMain: '<pgup>'
+    scrollDownMain: '<pgdown>'
+    scrollUpMain-alt1: 'K'
+    scrollDownMain-alt1: 'J'
+    scrollUpMain-alt2: '<c-u>'
+    scrollDownMain-alt2: '<c-d>'
+    executeCustomCommand: ':'
+    createRebaseOptionsMenu: 'm'
+    pushFiles: 'P'
+    pullFiles: 'p'
+    refresh: 'R'
+    createPatchOptionsMenu: '<c-p>'
+    nextTab: ']'
+    prevTab: '['
+    nextScreenMode: '+'
+    prevScreenMode: '_'
+    undo: 'z'
+    redo: '<c-z>'
+    filteringMenu: '<c-s>'
+    diffingMenu: 'W'
+    diffingMenu-alt: '<c-e>'
+    copyToClipboard: '<c-o>'
+    submitEditorText: '<enter>'
+    appendNewline: '<a-enter>'
+    extrasMenu: '@'
+    toggleWhitespaceInDiffView: '<c-w>'
+
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} {{filename}}'
+  openCommand: 'start'
+
+customCommands:
+  - key: '<c-t>'
+    command: 'git log --oneline --graph --decorate --all'
+    description: 'Log graph'
+    context: 'global'
+  - key: '<c-a>'
+    command: 'git add .'
+    description: 'Add all files'
+    context: 'files'
+  - key: '<c-c>'
+    command: 'git commit'
+    description: 'Commit'
+    context: 'files'
